@@ -1,0 +1,33 @@
+/**
+ * Navigation Component
+ */
+
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: $light;
+    @extend .shadow-1;
+
+    &__wrapper {
+        position: relative;
+        
+        &_link {
+            display: inline-block;
+
+            a {
+                display: inline-block;
+                position: relative;
+                padding: 1.5rem 2rem;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,58 @@
+/**
+ * Global Styles
+ */
+
+// Define color variables
+$gray: #aaa;
+$dark: #333;
+$light: #f0f0f0;
+$blue: #1b98fc;
+$offBlue: #94b7ca;
+
+// Test for autoprefixer working
+.autoprefixer-test {
+    opacity: .5;
+    display: flex;
+    flex-direction: row;
+    border-radius: 3px;
+    ::placeholder {
+        opacity:.2;
+    }
+}
+
+// Define shadow classes
+.shadow-1 {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.15);
+}
+
+// Define font rules
+.font-family-default {
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.font-bold {
+    @extend .font-family-default;
+
+    font-weight: 900;
+}
+.font-default {
+    @extend .font-family-default;
+
+    font-weight: 400;
+}
+
+// Define global rules
+html {
+    height:100%;
+    font-size: 100%;
+    line-height: 1.3;
+    background: $gray;
+}
+
+body {
+    @extend .font-default;
+
+    height: 100%;
+    font-size: 1.1rem;
+}
