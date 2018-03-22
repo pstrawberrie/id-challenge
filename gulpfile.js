@@ -8,7 +8,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 
 // Set up browsersync 
-gulp.task('serve', ['html', 'js', 'sass'], () => {
+gulp.task('serve', ['html', 'images', 'js', 'sass'], () => {
 
     browserSync.init({
         server: "./dist"
@@ -16,6 +16,7 @@ gulp.task('serve', ['html', 'js', 'sass'], () => {
 
     gulp.watch("src/styles/**/*.scss", ['sass']);
     gulp.watch("src/scripts/*.js", ['js']);
+    gulp.watch("src/images/*.*", ['images']);
     gulp.watch("src/views/*.html", ['html']).on('change', browserSync.reload);
 });
 
@@ -23,6 +24,12 @@ gulp.task('serve', ['html', 'js', 'sass'], () => {
 gulp.task('html', () => {
     return gulp.src("src/views/*.html")
         .pipe(gulp.dest("./dist"));
+});
+
+// Copy Images to dist folder
+gulp.task('images', () => {
+    return gulp.src("src/images/*.*")
+        .pipe(gulp.dest("./dist/images"));
 });
 
 // Copy JS to dist folder via watch

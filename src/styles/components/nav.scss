@@ -2,32 +2,56 @@
  * Navigation Component
  */
 
+// Body Padding Offset for Nav
+body {
+    padding-top: 60px;
+}
+
 .nav {
-    position: absolute;
+    @extend .shadow-1;
+
+    position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
+    height:60px;
     background: $light;
-    @extend .shadow-1;
 
     &__wrapper {
-        position: relative;
-        
+        @extend .wrapper-1280;
+
+        display: flex;
+        flex-direction: row;
+        height:100%;
+
         &_link {
-            display: inline-block;
+            display: flex;
+            flex-direction: row;
 
             a {
-                display: inline-block;
-                position: relative;
-                padding: 1.5rem 2rem;
+                @extend .font-bold;
+
+                display:flex;
+                font-size: .8rem;
+                text-transform: uppercase;
+                padding: 0 1.5rem;
+                align-items: center;
+                justify-content: center;
 
                 &:hover {
                     text-decoration: underline;
                 }
             }
+            &:first-child a {
+                padding-left: 0;
+            }
         }
 
+        @media all and (max-width:1320px) {
+            padding: 0 1rem;
+        }
     }
 
 }

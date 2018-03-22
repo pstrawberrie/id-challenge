@@ -1,0 +1,37 @@
+/**
+ * Layout Styling
+ */
+
+ .main-content {
+     display: block;
+     position: relative;
+     padding: 1rem;
+     @extend .wrapper-1280;
+ }
+
+ // Mock Component Area
+ .component-area {
+     display: flex;
+     flex-direction: row;
+     
+     &__left, &__right {
+        display: flex;
+        flex-direction: column;
+     }
+     &__left {
+         width: 40%;
+
+         @media all and (max-width:1024px) {
+             display: none;
+         }
+     }
+     &__right {
+         width: 59%;
+         margin-left: 1%;
+
+         @media all and (max-width:1024px) {
+            width: 100%;
+            margin-left: 0;
+        }
+     }
+ }
